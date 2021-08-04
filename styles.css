@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #010b13;;
+    --secondary-color: #ff3;
+    --x-axis: 100vw;
+    --y-axis: 100vh;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--main-color);
+}
+
+.ball {
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: bounce 5s infinite alternate forwards linear;
+}
+
+.wrapper {
+    width: 1em;
+    height: 1em;
+    animation: traverse 4s infinite alternate forwards linear;
+}
+
+@keyframes traverse {
+    to {
+        transform: translateX(calc(var(--x-axis) - 1em));
+    }
+}  
+
+@keyframes bounce {
+    to {
+        transform: translateY(calc(var(--y-axis) - 1em));
+    }
+}
